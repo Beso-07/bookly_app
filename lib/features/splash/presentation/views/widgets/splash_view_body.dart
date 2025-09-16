@@ -3,7 +3,6 @@ import 'package:bookly_app/core/utils/assets.dart';
 import 'package:bookly_app/features/home/presentation/views/home_view.dart';
 import 'package:bookly_app/features/splash/presentation/views/widgets/init_sliding_animation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 
@@ -49,8 +48,8 @@ class _SplashViewBodyState extends State<SplashViewBody>
     return Center(
       child: SlideTransition(
         position: slidingAnimation,
-        child: SvgPicture(
-          SvgAssetLoader(AssetsPath.logo),
+        child: Image.asset(
+          AssetsPath.logo,
           width: MediaQuery.of(context).size.width * 0.6,
         ),
       ),

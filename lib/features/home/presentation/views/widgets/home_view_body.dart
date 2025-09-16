@@ -13,7 +13,7 @@ class HomeViewBody extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          CustomAppBar(),
+           CustomAppBar(),
           CustomListBookCover(),
           SizedBox(height: MediaQuery.of(context).size.height * .03),
           Text('Best Seller', style: Styles.titleMedium),

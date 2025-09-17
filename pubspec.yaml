@@ -67,7 +67,7 @@ flutter:
       fonts:
         - asset: assets/fonts/PlayfairDisplay-Bold.ttf
         - asset: assets/fonts/PlayfairDisplay-Medium.ttf
-        - asset: assets/fonts/PlayfairDisplay-Refular.ttf
+        - asset: assets/fonts/PlayfairDisplay-Regular.ttf
         - asset: assets/fonts/PlayfairDisplay-SemiBold.ttf
   #   - family: Trajan Pro
   #     fonts:

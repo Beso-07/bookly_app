@@ -1,5 +1,5 @@
-import 'package:bookly_app/core/utils/assets.dart';
 import 'package:bookly_app/core/utils/styles.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/best_seller_item.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_app_bar.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_list_book_cover.dart';
 import 'package:flutter/material.dart';
@@ -9,47 +9,53 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 12),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          CustomAppBar(),
-          CustomListBookCover(),
-          SizedBox(height: MediaQuery.of(context).size.height * .03),
-          Text('Best Seller', style: Styles.textStyle18),
-          SizedBox(height: MediaQuery.of(context).size.height * .03),
-          BestSellerItem(),
-        ],
-      ),
+    return CustomScrollView(
+      slivers: [
+        SliverToBoxAdapter(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                child: CustomAppBar(),
+              ),
+              CustomListBookCover(),
+              const SizedBox(height: 20),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: Text('Best Seller', style: Styles.textStyle18),
+              ),
+              const SizedBox(height: 20),
+            ],
+          ),
+        ),
+        SliverToBoxAdapter(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: BestSellerListView(),
+          ),
+        ),
+      ],
     );
   }
 }
 
-class BestSellerItem extends StatelessWidget {
-  const BestSellerItem({super.key});
+class BestSellerListView extends StatelessWidget {
+  const BestSellerListView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        SizedBox(
-          height: 180,
-          child: AspectRatio(
-            aspectRatio: .6,
-            child: Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8),
-                image: DecorationImage(
-                  fit: BoxFit.fill,
-                  image: AssetImage(AssetsPath.book1),
-                ),
-              ),
-            ),
-          ),
-        ),
-        Column(),
-      ],
+    return ListView.builder(
+      padding: EdgeInsets.zero,
+      shrinkWrap: true,
+      itemCount: 20,
+      physics: const NeverScrollableScrollPhysics(),
+      itemBuilder: (context, index) {
+        return const Padding(
+          padding: EdgeInsets.only(bottom: 20),
+          child: BestSellerItem(),
+        );
+      },
     );
   }
 }

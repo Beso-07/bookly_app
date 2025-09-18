@@ -1,3 +1,4 @@
+import 'package:bookly_app/features/home/data/models/book_model/book_model.dart';
 import 'package:dio/dio.dart';
 
 class ApiServices {
@@ -23,9 +24,9 @@ class ApiServices {
     );
   }
 
-  static Future<Response<dynamic>> getData({required String path}) async {
+  static Future<Map<String,dynamic>> getData({required String path}) async {
     final response = await _dio.get(path);
-    return response;
+    return response.data;
   }
 
   static Future<Response<dynamic>> postData({

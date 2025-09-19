@@ -2,7 +2,6 @@ import 'package:bookly_app/core/utils/fucntions/launch_url.dart';
 import 'package:bookly_app/core/widgets/custom_button.dart';
 import 'package:bookly_app/features/home/data/models/book_model/book_model.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class BookActions extends StatelessWidget {
   const BookActions({super.key, required this.book});
@@ -29,7 +28,7 @@ class BookActions extends StatelessWidget {
               launchCustomUrl(context, book.volumeInfo.previewLink!);
             },
             text: getText(book),
-            backgroundColor: Color(0xffEF8262),
+            backgroundColor: const Color(0xffEF8262),
             textColor: Colors.white,
             borderRadius: BorderRadius.only(
               topRight: Radius.circular(16),

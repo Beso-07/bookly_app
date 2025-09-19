@@ -15,7 +15,10 @@ class BooksDtailsSection extends StatelessWidget {
       children: [
         Padding(
           padding: EdgeInsets.symmetric(horizontal: width * .18),
-          child: CustomBookCover(bookImage: 'https://www.shutterstock.com/image-vector/img-vector-icon-design-on-260nw-2164648583.jpg',),
+          child: CustomBookCover(
+            bookImage:
+                'https://www.shutterstock.com/image-vector/img-vector-icon-design-on-260nw-2164648583.jpg',
+          ),
         ),
         const SizedBox(height: 30),
         Text(
@@ -34,7 +37,11 @@ class BooksDtailsSection extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 15),
-        const BookRating(mainAxisAlignment: MainAxisAlignment.center),
+        BookRating(
+          mainAxisAlignment: MainAxisAlignment.center,
+          language: '',
+          pageCount: 15,
+        ),
         const SizedBox(height: 15),
         const BookActions(),
       ],

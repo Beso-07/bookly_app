@@ -23,7 +23,6 @@ class BooksDtailsSection extends StatelessWidget {
         ),
         const SizedBox(height: 16),
         SizedBox(
-          //height: 80,
           child: Text(
             book.volumeInfo.title!,
             textAlign: TextAlign.center,
@@ -48,7 +47,7 @@ class BooksDtailsSection extends StatelessWidget {
           pageCount: book.volumeInfo.pageCount!,
         ),
         const SizedBox(height: 15),
-        const BookActions(),
+         BookActions(book: book,),
       ],
     );
   }
